@@ -12,4 +12,8 @@ describe('Authomator Web UI', function(){
     expect(app.post).to.be.a('function');
   });
 
+  it('view engine should be set to jade', function(){
+    expect(app.get('view engine')).to.equal('jade');
+  });
+
 });
