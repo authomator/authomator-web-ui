@@ -39,6 +39,8 @@ app.set('layout', 'layouts/default');
  *************************************************************************/
 
 // @todo: only debug mode if env is development
+// Map requests to /public/css to /less
+// and compile to CSS on the fly
 app.use(lessMiddleware(__dirname + '/less', {
   debug: true,
   dest: __dirname + '/public/css'
