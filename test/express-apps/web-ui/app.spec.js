@@ -1,8 +1,7 @@
 var chai = require('chai');
-var express = require('express');
 var expect = chai.expect;
 
-var app = require('./app');
+var app = require('../../../express-apps/web-ui')();
 
 describe('Authomator Web UI', function(){
 

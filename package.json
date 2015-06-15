@@ -4,7 +4,7 @@
   "description": "Authomator Web UI",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec ./test/**/*.js"
   },
   "keywords": [
     "authomator",
