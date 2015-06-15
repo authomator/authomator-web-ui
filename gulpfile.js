@@ -8,12 +8,10 @@ var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var rename    = require('gulp-rename');
 var path = require('path');
-var sourceLessFiles = [
-  './express-app/less/**/*.less',
-  '!./express-app/less/**/_*.less'
-];
 
 gulp.task('less', function () {
+
+  // Ignore less files starting with _
   return gulp.src([
       './express-app/less/**/*.less',
       '!./express-app/less/**/_*.less'
