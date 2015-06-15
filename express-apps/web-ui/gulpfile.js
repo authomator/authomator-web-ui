@@ -7,7 +7,6 @@ function init(gulp, plugins, prefix){
   gulp = gulp || require('gulp');
   plugins = plugins || require('gulp-load-plugins')();
   prefix = prefix || '';
-  runSequence.use(gulp);
 
   gulp.task(prefix + 'less', function(){
 
@@ -49,7 +48,7 @@ function init(gulp, plugins, prefix){
 
 }
 
-// @todo: is there a better way to check if we have been required or run directly using gulp?
+// @todo: is there a better way to check if gruntfile.js has been required by another module or or run directly using gulp?
 if (module.parent && module.parent.filename && module.parent.filename.match(/gulp\.js$/)) {
   console.log('RUN DIRECTLY USING GULP');
   init();
