@@ -1,9 +1,7 @@
 var express = require('express');
 var app = express();
-var authomatorWebUI = require('./express-app');
-var morgan = require('morgan');
+var authomatorWebUI = require('./express-apps/web-ui')();
 
-app.use(morgan('combined'));
 app.use(authomatorWebUI);
 
 app.listen(3000);

@@ -6,5 +6,6 @@ module.exports = function(options){
 };
 
 router.all('*', function(req, res, next){
+  res.status(404);
   res.render(__dirname + '/views/404');
 });
