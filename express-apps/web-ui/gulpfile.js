@@ -15,11 +15,14 @@ function init(gulp, plugins, options){
 
   gulp.task(prefix + 'less', function(){
 
+    var sourceFiles = [
+      __dirname + '/**/*.less',
+      '!' + __dirname + '/**/_*.less'
+    ];
+
     // Ignore less files starting with _
-    return gulp.src([
-      __dirname + '/less/**/*.less',
-      '!' + __dirname + '/less/**/_*.less'
-    ])
+    return gulp.src(sourceFiles)
+      .pipe(plugins.plumber())
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.less())
       .pipe(plugins.autoprefixer({
@@ -30,33 +33,56 @@ function init(gulp, plugins, options){
       .pipe(plugins.minifyCss())
       .pipe(plugins.rename('app.min.css'))
       .pipe(plugins.sourcemaps.write('./'))
-      .pipe(gulp.dest(__dirname + '/public/css'));
+      .pipe(gulp.dest(__dirname + '/public/css'))
+      .pipe(plugins.livereload());
 
   });
 
+  /**
+   * Watch LESS files for changes
+   */
   gulp.task(prefix + 'watch:less', function(){
-
+    plugins.livereload.listen();
     plugins.watch([
-      __dirname + '/less/**/*.less'
+      __dirname + '/**/*.less'
     ], function(){
-      console.log('CHANGE DETECTED IN LESS');
       runSequence(prefix + 'less');
     });
+  });
 
+  /**
+   * Watch JADE files for changes
+   */
+  gulp.task(prefix + 'watch:jade', function(){
+    plugins.livereload.listen();
+    plugins.watch([
+      __dirname + '/**/*.jade'
+    ], function(){
+      plugins.livereload.reload();
+    });
+  });
+
+  /**
+   * Watch everything
+   */
+  gulp.task(prefix + 'watch:all', function(){
+    runSequence([
+      prefix + 'watch:jade',
+      prefix + 'watch:less'
+    ])
   });
 
   gulp.task(prefix + 'default', function(){
-
-    runSequence(prefix + 'less', prefix + 'watch:less');
-
+    runSequence(prefix + 'less', prefix + 'watch:all');
   });
 
 }
 
 // @todo: is there a better way to check if gruntfile.js has been required by another module or or run directly using gulp?
 if (module.parent && module.parent.filename && module.parent.filename.match(/gulp\.js$/)) {
-  console.log('RUN DIRECTLY USING GULP');
+  // Run directly using gulp
   init();
 }else{
+  // Required via another module
   console.log('REQUIRED');
 }
