@@ -11,8 +11,10 @@
 
                 form(method="POST" action="")
 
-                    if invalidCredentials
-                        .alert.alert-danger= __('Invalid email or password')
+                    if emailAlreadyInUse
+                        .alert.alert-danger
+                            = __('Email address already in use')
+                            p: a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
 
                     .form-group
                         label= __('Email')
