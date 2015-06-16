@@ -2,11 +2,16 @@ var runSequence = require('run-sequence');
 
 module.exports = init;
 
-function init(gulp, plugins, prefix){
+function init(gulp, plugins, options){
+
+  var prefix = '';
 
   gulp = gulp || require('gulp');
   plugins = plugins || require('gulp-load-plugins')();
-  prefix = prefix || '';
+
+  if(options && options.prefix){
+    prefix = options.prefix;
+  }
 
   gulp.task(prefix + 'less', function(){
 
