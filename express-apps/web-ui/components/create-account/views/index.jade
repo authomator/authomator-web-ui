@@ -1,1 +1,28 @@
-h1 Create account
+.page-login
+    section.section-login
+
+        .card
+
+            .card-logo
+
+                img(src="#{app.baseUrl}/img/authomator.png")
+
+            .card-content
+
+                form(method="POST" action="")
+
+                    if invalidCredentials
+                        .alert.alert-danger= __('Invalid email or password')
+
+                    .form-group
+                        label= __('Email')
+                        input(type="hidden", name="_csrf", value=_csrf)
+                        input.form-control(type="email", placeholder=__('Email address'))
+
+                    .form-group
+                        label= __('Password')
+                        input.form-control(type="password", placeholder=__('Password'))
+
+                    button.btn.btn-primary.btn-block(type="submit")= __('Create new account')
+
+                    a.btn.btn-link.btn-block(href="#{app.baseUrl}/sign-in")= __('Sign in')
