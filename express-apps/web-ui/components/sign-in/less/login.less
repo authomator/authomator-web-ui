@@ -1,0 +1,54 @@
+@import "../../../less/_variables.less";
+
+.page-login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: radial-gradient(ellipse at center,  #f8f8f8 0%,#eeeeee 100%); /* W3C */
+
+  .section-login{
+    flex: 0 1 400px;
+    padding: 0 20px;
+  }
+
+  .card{
+    position:relative;
+    padding: 50px 0 20px 0;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 30px 30px -20px rgba(0,0,0,0.3);
+  }
+
+  .logo{
+    position: absolute;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    background: #f8f8f8;
+    padding: 5px;
+    left: 50%;
+    top: -38px;
+    transform: translateX(-50%);
+    img{
+      height: 60px;
+    }
+  }
+
+  form {
+    padding: 20px 40px;
+    @media(max-width: @screen-xs-max){
+      padding: 2em;
+    }
+  }
+
+  label{
+    display: none;
+  }
+
+  .help-block{
+    a{
+      font-size: 0.9rem;
+    }
+  }
+
+}

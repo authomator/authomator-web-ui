@@ -1,0 +1,26 @@
+.page-login
+    section.section-login
+
+        .card
+            .logo
+                img(src="#{app.baseUrl}/img/authomator.png")
+
+            form(method='post' action='#{app.baseUrl}/sign-in')
+
+                if invalidCredentials
+                    .alert.alert-danger= __('Invalid email or password')
+
+                .form-group
+                    label= __('Email')
+                    input(type="hidden", name="_csrf", value=_csrf)
+                    input.form-control(type="email", placeholder=__('Email address'))
+
+                .form-group
+                    label= __('Password')
+                    input.form-control(type="password", placeholder=__('Password'))
+                    .help-block
+                        a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
+
+                button.btn.btn-primary.btn-block(type="submit")= __('Log in')
+
+                a.btn.btn-link.btn-block(href="#{app.baseUrl}/create-account")= __('Create a new account')
