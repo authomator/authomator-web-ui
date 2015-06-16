@@ -13,11 +13,15 @@
   "author": "Jurgen Van de Moere <jurgen.van.de.moere@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.13.0",
     "config": "^1.14.0",
     "express": "^4.12.4",
     "express-layout": "^0.1.0",
+    "express-session": "^1.11.3",
+    "i18n": "^0.5.0",
     "jade": "^1.11.0",
     "less-middleware": "^2.0.1",
+    "lusca": "^1.1.1",
     "morgan": "^1.5.3"
   },
   "devDependencies": {
@@ -26,8 +30,10 @@
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.5.2",
     "gulp-less": "^3.0.3",
+    "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.1.6",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.4.2",
     "gulp-sourcemaps": "^1.5.2",
