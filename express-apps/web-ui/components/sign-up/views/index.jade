@@ -2,19 +2,22 @@ section.component.component-sign-up
 
     form(method="POST" action="")
 
-        if emailAlreadyInUse
+        if UserExistsError
             .alert.alert-danger
                 = __('Email address already in use')
                 p: a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
+        if BadParamsError
+            .alert.alert-danger
+                = __('Invalid value for email/password')
 
         .form-group
             label= __('Email')
             input(type="hidden", name="_csrf", value=_csrf)
-            input.form-control(type="email", placeholder=__('Email address'))
+            input.form-control(name="email" type="email", placeholder=__('Email address'))
 
         .form-group
             label= __('Password')
-            input.form-control(type="password", placeholder=__('Password'))
+            input.form-control(name="password" type="password", placeholder=__('Password'))
 
         button.btn.btn-primary.btn-block(type="submit")= __('Create new account')
 

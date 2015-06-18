@@ -18,5 +18,7 @@
 	"Request a new link": "Nieuwe link aanvragen",
 	"Oops": "Oops",
 	"Something exploded": "Er is iets ontploft",
-	"Your password has been reset": "Uw wachtwoord is opnieuw ingesteld"
+	"Your password has been reset": "Uw wachtwoord is opnieuw ingesteld",
+	"Invalid value for email/password": "Ongeldige invoer voor email/password",
+	"Page not found": "Page not found"
 }
