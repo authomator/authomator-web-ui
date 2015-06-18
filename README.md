@@ -37,11 +37,13 @@ It can be overriden and extended using the [node-config](https://github.com/lore
 
 See [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files) for more information.
 
-### Start the web UI
-
-
-
 ## Development
+
+Installing the dependencies:
+
+```bash
+$ npm install
+```
 
 To run the build process:
 
@@ -55,11 +57,11 @@ To run the tests:
 $ npm test
 ```
 
-## Structure
-
-
-
 ## Change log
+
+### v0.2.0
+
+- Added configuration support
 
 ### v0.1.0
 
