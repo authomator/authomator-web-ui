@@ -1,1 +1,17 @@
-h1 Forgot password
+section.component.component-forgot-password
+
+    form(method="POST", action="")
+
+        if invalidEmail
+            .alert.alert-danger
+                = __('Email address not found')
+                p: a(href="#{app.baseUrl}/sign-up")= __('Create an account')
+
+        .form-group
+            label= __('Email')
+            input(type="hidden", name="_csrf", value=_csrf)
+            input.form-control(type="email", placeholder=__('Email address'))
+
+        button.btn.btn-primary.btn-block(type="submit")= __('Reset password')
+
+        a.btn.btn-link.btn-block(href="#{app.baseUrl}/")= __('Sign in')
