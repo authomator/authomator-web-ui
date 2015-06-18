@@ -111,7 +111,7 @@ module.exports = function (options) {
    * require('./components/signup')(options)
    *************************************************************************/
 
-  app.use(['/', '/sign-in'], require('./components/sign-in')());
+  app.use('/', require('./components/sign-in')());
   app.use('/forgot-password', require('./components/forgot-password')());
   app.use('/reset-password', require('./components/reset-password')());
   app.use('/sign-up', require('./components/sign-up')());
