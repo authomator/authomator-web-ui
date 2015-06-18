@@ -46,6 +46,18 @@ module.exports = function (options) {
   config.util.extendDeep(app.locals, appConfig.get('locals'));
 
   /**************************************************************************
+   * Configure layout
+   *
+   * Make sure this is listed at the top so it also affects
+   * the layout of render calls in errors in case errors
+   * case the middleware stack to be skipped to the error handler
+   *************************************************************************/
+
+    // Call layout middleware so all render calls from components
+    // are injected into the global layout
+  app.use(expressLayout());
+
+  /**************************************************************************
    * Configure body parser
    *************************************************************************/
 
@@ -90,13 +102,7 @@ module.exports = function (options) {
 
   app.use(logger());
 
-  /**************************************************************************
-   * Configure layout
-   *************************************************************************/
 
-    // Call layout middleware so all render calls from components
-    // are injected into the global layout
-  app.use(expressLayout());
 
   /**************************************************************************
    * Load components
