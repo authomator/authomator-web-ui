@@ -1,5 +1,8 @@
 module.exports = {
 
+  // Port to let the server listen on
+  port: 3000,
+
   // Express application configuration
   app: {
 

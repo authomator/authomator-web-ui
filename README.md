@@ -8,13 +8,21 @@ Complete Express based application to integrate with an [Authomator](https://git
 - login page
 - password reset page
 
-## Configuration
+## How to get started
+
+To start the Authomator Web UI server:
+
+```bash
+$ node index.js
+```
+
+then navigate to: `<ip>:3000` in your browser.
+
+## Configuring the server
 
 The configuration is stored in configuration files in the `/config` directory.
 
-It can be overriden and extended using the [node-config](https://github.com/lorenwest/node-config) rules.
-
-e.g.
+It can be overriden and extended using the [node-config](https://github.com/lorenwest/node-config) rules:
 
 ```bash
 # Default configuration
@@ -29,13 +37,9 @@ e.g.
 
 See [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files) for more information.
 
-## Start the web UI
+### Start the web UI
 
-To start the server:
 
-```bash
-$ node index.js
-```
 
 ## Development
 
