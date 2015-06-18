@@ -1,1 +1,18 @@
-h1 Reset password
+section.component.component-reset-password
+
+    form(method="POST", action="")
+
+        if invalidLink
+            .alert.alert-danger
+                = __('The link you followed to reset the password is invalid or has expired.')
+                p: a(href="#{app.baseUrl}/forgot-password")= __('Request a new link')
+
+        .form-group
+            input(type="hidden", name="_token", value=token)
+            input(type="hidden", name="_csrf", value=_csrf)
+            label= __('New password')
+            input.form-control(type="password", placeholder=__('Enter a new password'))
+
+        button.btn.btn-primary.btn-block(type="submit")= __('Save new password')
+
+        a.btn.btn-link.btn-block(href="#{app.baseUrl}/")= __('Cancel')

@@ -2646,6 +2646,17 @@ body {
           flex: 0 1 400px;
   padding: 0 20px;
 }
+@media (max-width: 767px) {
+  section.component form {
+    padding: 2em;
+  }
+}
+section.component label {
+  display: none;
+}
+section.component .help-block a {
+  font-size: 0.9rem;
+}
 
 .card {
   position: relative;
@@ -2680,26 +2691,4 @@ section.component-page-not-found {
   text-align: center;
 }
 
-@media (max-width: 767px) {
-  section.component-sign-in form {
-    padding: 2em;
-  }
-}
-section.component-sign-in label {
-  display: none;
-}
-section.component-sign-in .help-block a {
-  font-size: 0.9rem;
-}
 
-@media (max-width: 767px) {
-  section.component-sign-up form {
-    padding: 2em;
-  }
-}
-section.component-sign-up label {
-  display: none;
-}
-section.component-sign-up .alert a {
-  font-size: 0.9rem;
-}

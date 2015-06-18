@@ -6,15 +6,25 @@ module.exports = function(options){
 };
 
 router.get('/', function(req, res, next){
+
+  // If token still ok
   res.render(__dirname + '/views/index.jade');
+
+  // If token expired
+  res.render(__dirname + '/views/index.jade', {
+    invalidLink: true
+  });
+
 });
 
 router.post('/', function(req, res, next){
 
-  // Check if email exists
+  // If reset succeeded
+  res.render(__dirname + '/views/success.jade');
 
-  res.render(__dirname + '/views/index.jade', {
-    invalidEmail: true
-  });
+  // If token expired
+  //res.render(__dirname + '/views/index.jade', {
+  //  invalidLink: true
+  //});
 
 });
