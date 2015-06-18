@@ -24,11 +24,12 @@ module.exports = {
     }
   },
 
-  // Authomator configuration
-  authomator: {
+  // Authomator API client configuration
+  AuthomatorNodeClient: {
 
-    // URL of authomator instance to communicate with
-    url: 'http://default.authomator.com'
+    // URL of authomator-api instance to communicate with
+    api: "http://127.0.0.1:3001"
+
   },
 
   // Logger configuration
