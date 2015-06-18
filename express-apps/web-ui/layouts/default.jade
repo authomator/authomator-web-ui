@@ -9,4 +9,11 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel='stylesheet', href="#{app.baseUrl}/css/app.min.css")
     body
-        != body
+        .body-wrapper
+            .body-content
+
+                .card
+                    .card-logo
+                        img(src="#{app.baseUrl}/img/authomator.png")
+                    .card-content
+                        != body

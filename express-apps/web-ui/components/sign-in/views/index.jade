@@ -1,30 +1,21 @@
-.page-sign-in
-    section.section-sign-in
+section.component-sign-in
 
-        .card
+    form(method="POST", action="")
 
-            .card-logo
+        if invalidCredentials
+            .alert.alert-danger= __('Invalid email or password')
 
-                img(src="#{app.baseUrl}/img/authomator.png")
+        .form-group
+            label= __('Email')
+            input(type="hidden", name="_csrf", value=_csrf)
+            input.form-control(type="email", placeholder=__('Email address'))
 
-            .card-content
+        .form-group
+            label= __('Password')
+            input.form-control(type="password", placeholder=__('Password'))
+            .help-block
+                a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
 
-                form(method="POST", action="")
+        button.btn.btn-primary.btn-block(type="submit")= __('Sign in')
 
-                    if invalidCredentials
-                        .alert.alert-danger= __('Invalid email or password')
-
-                    .form-group
-                        label= __('Email')
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        input.form-control(type="email", placeholder=__('Email address'))
-
-                    .form-group
-                        label= __('Password')
-                        input.form-control(type="password", placeholder=__('Password'))
-                        .help-block
-                            a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
-
-                    button.btn.btn-primary.btn-block(type="submit")= __('Sign in')
-
-                    a.btn.btn-link.btn-block(href="#{app.baseUrl}/create-account")= __('Create a new account')
+        a.btn.btn-link.btn-block(href="#{app.baseUrl}/sign-up")= __('Create a new account')

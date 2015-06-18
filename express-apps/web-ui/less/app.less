@@ -10,3 +10,16 @@ html,body{
 * {
   box-sizing: border-box;
 }
+
+.body-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #f8f8f8 0%, #eeeeee 100%); /* W3C */
+
+  .body-content {
+    flex: 0 1 400px;
+    padding: 0 20px;
+  }
+}
