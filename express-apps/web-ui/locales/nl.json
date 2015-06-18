@@ -1,0 +1,22 @@
+{
+	"Email": "Email",
+	"Email address": "Email adres",
+	"Password": "Wachtwoord",
+	"Forgot your password?": "Wachtwoord vergeten?",
+	"Sign in": "Aanmelden",
+	"Create a new account": "Nieuwe account maken",
+	"Create new account": "Account aanmaken",
+	"Email address already in use": "Email adres reeds gebruikt",
+	"Invalid email or password": "Ongeldig email adres of wachtwoord",
+	"Reset password": "Wachtwoord opnieuw instellen",
+	"Email address not found": "Email adres niet gevonden",
+	"New password": "Nieuw wachtwoord",
+	"Enter a new password": "Geef een nieuw wachtwoord in",
+	"Save new password": "Nieuw wachtwoord opslaan",
+	"Cancel": "Annuleren",
+	"The link you followed to reset the password is invalid or has expired.": "De link is ongeldig of vervallen.",
+	"Request a new link": "Nieuwe link aanvragen",
+	"Oops": "Oops",
+	"Something exploded": "Er is iets ontploft",
+	"Your password has been reset": "Uw wachtwoord is opnieuw ingesteld"
+}
