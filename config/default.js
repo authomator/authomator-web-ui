@@ -21,6 +21,12 @@ module.exports = {
 
       }
 
+    },
+
+    session : { // openssl rand -base64 50
+      secret : 'E69EjH/F5F77QDSv8rRZfCtOGhgTaYRGsB3B3dQy0skUTq5nG1PECJ9bCx/0zg5AABI=',
+      resave: true,
+      saveUninitialized: true
     }
   },
 

@@ -84,11 +84,7 @@ module.exports = function (options) {
    * Configure lusca
    *************************************************************************/
 
-  app.use(session({
-    secret: 'Taths8yO5Heej3fiAj4pab8fIm5wetph',
-    resave: true,
-    saveUninitialized: true
-  }));
+  app.use(session(appConfig.get('session')));
 
   app.use(lusca({
     csrf: true,
