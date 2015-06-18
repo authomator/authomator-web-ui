@@ -105,10 +105,10 @@ module.exports = function (options) {
    * require('./components/signup')(options)
    *************************************************************************/
 
-  app.use('/create-account', require('./components/create-account')());
+  app.use(['/', '/sign-in'], require('./components/sign-in')());
   app.use('/forgot-password', require('./components/forgot-password')());
   app.use('/reset-password', require('./components/reset-password')());
-  app.use('/sign-in', require('./components/sign-in')());
+  app.use('/sign-up', require('./components/sign-up')());
 
   /**************************************************************************
    * Serve static assets
@@ -117,10 +117,18 @@ module.exports = function (options) {
   app.use(express.static(__dirname + '/public'));
 
   /**************************************************************************
+   * Handle page not found
+   *************************************************************************/
+
+  app.use(require('./components/page-not-found')());
+
+  /**************************************************************************
    * Handle errors
    *************************************************************************/
 
-  app.use(require('./components/error-handlers')());
+  // Error handlers need to be attached to the app itself so we need
+  // to pass the app
+  require('./components/handle-errors')(app);
 
   return app;
 
