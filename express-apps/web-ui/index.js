@@ -5,7 +5,7 @@ var logger = require('../../lib/logger');
 var config = require('config');
 var i18n = require('i18n');
 var lusca = require('lusca');
-var session = require('express-session');
+var session = require('client-sessions');
 var bodyParser = require('body-parser');
 
 var defaultAppConfig = {
