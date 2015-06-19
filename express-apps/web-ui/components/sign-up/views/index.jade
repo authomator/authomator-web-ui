@@ -5,7 +5,7 @@ section.component.component-sign-up
         if UserExistsError
             .alert.alert-danger
                 = __('Email address already in use')
-                p: a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
+
         if BadParamsError
             .alert.alert-danger
                 = __('Invalid value for email/password')
@@ -22,3 +22,4 @@ section.component.component-sign-up
         button.btn.btn-primary.btn-block(type="submit")= __('Create new account')
 
         a.btn.btn-link.btn-block(href="#{app.baseUrl}/")= __('Sign in')
+        a.btn.btn-link.btn-block(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
