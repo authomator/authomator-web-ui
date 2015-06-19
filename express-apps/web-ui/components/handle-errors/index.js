@@ -51,6 +51,23 @@ module.exports = function(app, options){
   });
 
 
+  /**
+   * Error handler for Errors that have a .status and .message property
+   *
+   */
+  app.use(function(err, req, res, next) {
+
+    if (_.has(err, 'status') && _.has(err, 'message')) {
+      if (req.xhr) {
+        return res.status(err.status)
+          .send({ status: err.status, message: err.message });
+      }
+      return res.status(err.status).send(err.message);
+    }
+    next(err);
+  });
+
+
 
   /**
    * Generic error handling from here on
