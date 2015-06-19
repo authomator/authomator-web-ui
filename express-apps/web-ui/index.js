@@ -77,11 +77,14 @@ module.exports = function (options) {
   app.use(i18n.init);
 
   /**************************************************************************
-   * Configure lusca
+   * Configure sessions
    *************************************************************************/
 
-  app.use(session(appConfig.get('session')));
+  app.use(require('./components/middleware-session')());
 
+  /**************************************************************************
+   * Configure lusca
+   *************************************************************************/
   app.use(lusca({
     csrf: true,
     xframe: 'SAMEORIGIN',
@@ -94,13 +97,11 @@ module.exports = function (options) {
 
   app.use(require('./components/middleware-return')());
 
-
   /**************************************************************************
    * Configure logger
    *************************************************************************/
 
   app.use(logger());
-
 
 
   /**************************************************************************

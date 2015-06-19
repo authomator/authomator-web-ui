@@ -59,12 +59,12 @@ module.exports = {
 
     /************************************************************************
      *                                                                      *
-     * Session settings (client-sessions)                                   *
+     * Sessions settings (client-sessions)                                   *
      *                                                                      *
      * All options inside this object are fed into the client-session       *
      * library.                                                      *
      ************************************************************************/
-    session : { // openssl rand -base64 50
+    sessions : { // openssl rand -base64 50
 
       /************************************************************************
        *                                                                      *
