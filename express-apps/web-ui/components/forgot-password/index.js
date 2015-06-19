@@ -10,9 +10,9 @@ var resetUrl = 'http://127.0.0.1:3000/reset-password';
 module.exports = function(options){
 
   if (options && options.url) {
-    resetUrl = url;
+    resetUrl = options.url;
   }
-
+  
   return router;
 };
 
