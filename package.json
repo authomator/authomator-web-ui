@@ -4,7 +4,8 @@
   "description": "Authomator Web UI",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec ./test/**/*.js"
+    "test": "mocha --ui bdd --reporter spec $(find ./lib ./config ./express-apps -name '*.spec.js')",
+    "test:watch": "nodemon --exec npm run test"
   },
   "keywords": [
     "authomator",
