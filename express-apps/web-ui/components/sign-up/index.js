@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Authomator = require('authomator-node-client');
+var errors = require('../../errors');
 
 module.exports = function(options){
   return router;
@@ -20,5 +21,6 @@ router.post('/', function(req, res, next){
       BadParamsError: (err.name == 'BadParamsError')
     });
 
+    next(new errors.RedirectAuthenticatedRequest(tokens));
   });
 });
