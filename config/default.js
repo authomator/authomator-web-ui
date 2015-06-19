@@ -27,6 +27,14 @@ module.exports = {
       secret : 'E69EjH/F5F77QDSv8rRZfCtOGhgTaYRGsB3B3dQy0skUTq5nG1PECJ9bCx/0zg5AABI=',
       resave: true,
       saveUninitialized: true
+    },
+
+    // Configuration on how authenticated requests are allowed to be
+    // redirected
+    redirects : {
+      httpsOnly:          false,
+      acceptDomains:      ['127.0.0.1'],
+      defaultRedirect:    'http://127.0.0.1/'
     }
   },
 
