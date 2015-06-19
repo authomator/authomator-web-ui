@@ -35,7 +35,12 @@ module.exports = {
       httpsOnly:          false,
       acceptDomains:      ['127.0.0.1'],
       defaultRedirect:    'http://127.0.0.1/'
-    }
+    },
+
+    // This url will be set in the email sent to the user to reset his password
+    // please adjust it so it points to you install
+    resetUrl : 'http://127.0.0.1:3000/reset-password'
+
   },
 
   // Authomator API client configuration

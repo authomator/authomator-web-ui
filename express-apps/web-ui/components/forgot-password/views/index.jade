@@ -7,10 +7,14 @@ section.component.component-forgot-password
                 = __('Email address not found')
                 p: a(href="#{app.baseUrl}/sign-up")= __('Create a new account')
 
+        if BadParamsError
+            .alert.alert-danger
+                = __('Invalid email address')
+
         .form-group
             label= __('Email')
             input(type="hidden", name="_csrf", value=_csrf)
-            input.form-control(type="email", placeholder=__('Email address'))
+            input.form-control(type="email", name="email", placeholder=__('Email address'))
 
         button.btn.btn-primary.btn-block(type="submit")= __('Reset password')
 
