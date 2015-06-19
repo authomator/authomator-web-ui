@@ -8,10 +8,9 @@ section.component.component-reset-password
                 p: a(href="#{app.baseUrl}/forgot-password")= __('Request a new link')
 
         .form-group
-            input(type="hidden", name="_token", value=token)
             input(type="hidden", name="_csrf", value=_csrf)
             label= __('New password')
-            input.form-control(type="password", placeholder=__('Enter a new password'))
+            input.form-control(type="password", name="password", placeholder=__('Enter a new password'))
 
         button.btn.btn-primary.btn-block(type="submit")= __('Save new password')
 
