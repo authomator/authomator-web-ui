@@ -75,10 +75,6 @@ module.exports = function (options) {
   });
 
   app.use(i18n.init);
-  app.use(function (req, res, next) {
-    console.log('Locale: ' + req.getLocale());
-    next();
-  });
 
   /**************************************************************************
    * Configure lusca
