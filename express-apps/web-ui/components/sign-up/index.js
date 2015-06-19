@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Authomator = require('authomator-node-client');
 var errors = require('../../errors');
+var _ = require('lodash');
 
 module.exports = function(options){
   return router;
@@ -16,10 +17,15 @@ router.post('/', function(req, res, next){
 
   new Authomator().signup(req.body.email, req.body.password, function(err, tokens) {
 
-    if (err) return res.render(__dirname + '/views/index.jade', {
-      UserExistsError: (err.name == 'UserExistsError'),
-      BadParamsError: (err.name == 'BadParamsError')
-    });
+    if (err) {
+
+      if ( ! _.contains(['UserExistsError', 'BadParamsError'], err.name )) return next(err);
+
+      return res.render(__dirname + '/views/index.jade', {
+        UserExistsError: (err.name == 'UserExistsError'),
+        BadParamsError: (err.name == 'BadParamsError')
+      });
+    }
 
     next(new errors.RedirectAuthenticatedRequest(tokens));
   });
