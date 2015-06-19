@@ -11,7 +11,7 @@ module.exports = function(app, options){
     defaultRedirect:    'http://127.0.0.1/'
   };
 
-  config.util.extendDeep(opts, config.get('app.redirects'));
+  config.util.extendDeep(opts, config.get('webUi.redirects'));
   config.util.extendDeep(opts, options);
 
   /**

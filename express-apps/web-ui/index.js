@@ -22,7 +22,7 @@ module.exports = function (options) {
   config.util.extendDeep(defaultAppConfig, options)
   config.util.setModuleDefaults('app', defaultAppConfig);
 
-  var appConfig = config.get('app');
+  var appConfig = config.get('webUi');
 
   /**************************************************************************
    * Apply application settings
