@@ -28,7 +28,7 @@ function ForbiddenError(message) {
   Error.captureStackTrace(this, arguments.callee);
   this.name = 'ForbiddenError';
   this.status = 403;
-  this.message = 'Forbidden' || message;
+  this.message = message || 'Forbidden';
 }
 ForbiddenError.prototype = Error.prototype;
 exports.ForbiddenError = ForbiddenError;
