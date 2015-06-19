@@ -12,7 +12,6 @@ module.exports = function(options){
   if (options && options.url) {
     resetUrl = options.url;
   }
-  
   return router;
 };
 
@@ -36,6 +35,4 @@ router.post('/', function(req, res, next){
 
     res.render(__dirname + '/views/success.jade');
   });
-
-
 });
