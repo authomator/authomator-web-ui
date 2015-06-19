@@ -26,8 +26,8 @@ var opts = {
 
 module.exports = function middleware(options) {
 
-  config.util.extendDeep(opts, options);
   config.util.extendDeep(opts, config.get('webUi.sessions'));
+  config.util.extendDeep(opts, options);
 
   if (!opts.secret) {
     throw new Error('Critical issue, no cookie secret is configured..stopping')
