@@ -15,4 +15,29 @@ describe('Authomator Web UI', function(){
     expect(app.get('view engine')).to.equal('jade');
   });
 
+  describe('i18n', function(){
+    it('should set the correct language based on browser settings');
+    it('should set the correct language based on query params');
+  });
+
+  describe('/forgot-password', function(){
+    it('should handle GET');
+    it('should handle POST');
+  });
+
+  describe('/reset-password', function(){
+    it('should handle GET');
+    it('should handle POST');
+  });
+
+  describe('/sign-in', function(){
+    it('should handle GET');
+    it('should handle POST');
+  });
+
+  describe('/sign-up', function(){
+    it('should handle GET');
+    it('should handle POST');
+  });
+
 });
