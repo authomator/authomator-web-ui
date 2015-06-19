@@ -5,14 +5,18 @@ section.component.component-sign-in
         if invalidCredentials
             .alert.alert-danger= __('Invalid email or password')
 
+        if BadParamsError
+            .alert.alert-danger
+                = __('Invalid value for email/password')
+
         .form-group
             label= __('Email')
             input(type="hidden", name="_csrf", value=_csrf)
-            input.form-control(type="email", placeholder=__('Email address'))
+            input.form-control(type="email", name="email", placeholder=__('Email address'))
 
         .form-group
             label= __('Password')
-            input.form-control(type="password", placeholder=__('Password'))
+            input.form-control(type="password", name="password", placeholder=__('Password'))
             .help-block
                 a(href="#{app.baseUrl}/forgot-password")= __('Forgot your password?')
 
